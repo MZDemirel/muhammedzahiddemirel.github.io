@@ -3,59 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammed Zahid Demirel | Portfolyo</title>
-    <style>
-        /* Buraya biraz temel stil ekleyelim ki sayfa çok boş görünmesin */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
-        header { background: #24292e; color: #fff; padding: 2rem; text-align: center; }
-        section { padding: 2rem; max-width: 800px; margin: auto; }
-        .project-card { border: 1px solid #ddd; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; }
-        footer { text-align: center; padding: 1rem; background: #f4f4f4; }
-    </style>
+    <meta name="description" content="Muhammed Zahid Demirel — Gömülü Sistemler ve Web Geliştirme ile ilgilenen bir mühendis adayının kişisel portfolyo sitesi.">
+    <title>Muhammed Zahid Demirel | Anasayfa</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>Merhaba, Ben Muhammed Zahid Demirel</h1>
-        <p>Gömülü Sistemler ve Web Geliştirme ile İlgilenen Bir Mühendis Adayı</p>
-    </header>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">MZD</a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Anasayfa</a>
+                <a href="about.html">Hakkımda</a>
+                <a href="interest.html">İlgi Alanlarım</a>
+                <a href="contact.html">İletişim</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    <section id="about">
-        <h2>Hakkımda</h2>
-        <p>
-            Buraya kendinden, ilgi alanlarından ve nelerle uğraştığından kısaca bahsedebilirsin. 
-            Örneğin; hangi dilleri biliyorsun, hangi teknolojiler üzerine çalışıyorsun?
-        </p>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                <span>Portfolyoma Hoş Geldiniz</span>
+            </div>
+            <h1>
+                Merhaba, Ben<br>
+                <span class="gradient-text">Muhammed Zahid Demirel</span>
+            </h1>
+            <p class="hero-subtitle">
+                Gömülü Sistemler ve Web Geliştirme ile ilgilenen bir mühendis adayıyım. 
+                Teknolojiyle geleceğe köprü kuruyorum.
+            </p>
+            <div class="hero-actions">
+                <a href="about.html" class="btn btn-primary">
+                    🚀 Hakkımda
+                </a>
+                <a href="contact.html" class="btn btn-secondary">
+                    ✉️ İletişim
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section id="projects">
-        <h2>Projelerim</h2>
-        
-        <div class="project-card">
-            <h3>Proje Adı 1</h3>
-            <p>Bu projede neler yaptığını, hangi teknolojileri (React, ESP32, Python vb.) kullandığını açıkla.</p>
-            <a href="#">GitHub Linki</a>
+    <!-- Highlights Section -->
+    <section class="section" id="highlights">
+        <div class="section-header animate-on-scroll">
+            <span class="section-label">// Genel Bakış</span>
+            <h2 class="section-title">Neler Yapıyorum?</h2>
+            <p class="section-subtitle">
+                Yazılım ve donanımın kesişim noktasında projeler geliştiriyorum.
+            </p>
         </div>
 
-        <div class="project-card">
-            <h3>Proje Adı 2</h3>
-            <p>Diğer bir çalışman hakkında kısa bir bilgi.</p>
-            <a href="#">Canlı Demo</a>
+        <div class="skills-grid">
+            <div class="glass-card skill-card animate-on-scroll stagger-1">
+                <div class="skill-icon">⚡</div>
+                <h3>Gömülü Sistemler</h3>
+                <p>Mikrodenetleyiciler ve IoT cihazları ile donanım tabanlı projeler geliştiriyorum.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">ESP32</span>
+                    <span class="skill-tag">Arduino</span>
+                    <span class="skill-tag">C/C++</span>
+                </div>
+            </div>
+            <div class="glass-card skill-card animate-on-scroll stagger-2">
+                <div class="skill-icon">🌐</div>
+                <h3>Web Geliştirme</h3>
+                <p>Modern ve kullanıcı dostu web uygulamaları ve siteler tasarlıyorum.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                </div>
+            </div>
+            <div class="glass-card skill-card animate-on-scroll stagger-3">
+                <div class="skill-icon">🐍</div>
+                <h3>Yazılım Geliştirme</h3>
+                <p>Python ve diğer dillerde otomasyon, veri analizi ve uygulama geliştirme.</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Linux</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid animate-on-scroll">
+            <div class="glass-card stat-card">
+                <div class="stat-number" data-count="10" data-suffix="+">0</div>
+                <div class="stat-label">Tamamlanan Proje</div>
+            </div>
+            <div class="glass-card stat-card">
+                <div class="stat-number" data-count="5" data-suffix="+">0</div>
+                <div class="stat-label">Kullanılan Teknoloji</div>
+            </div>
+            <div class="glass-card stat-card">
+                <div class="stat-number" data-count="3" data-suffix="+">0</div>
+                <div class="stat-label">Yıl Deneyim</div>
+            </div>
+            <div class="glass-card stat-card">
+                <div class="stat-number" data-count="100" data-suffix="%">0</div>
+                <div class="stat-label">Tutku & Motivasyon</div>
+            </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>İletişim</h2>
-        <p>Bana şu kanallardan ulaşabilirsiniz:</p>
-        <ul>
-            <li>Email: ornek@email.com</li>
-            <li>LinkedIn: /in/kullaniciadi</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Muhammed Zahid Demirel</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <span class="footer-logo">MZD</span>
+            <p class="footer-text">&copy; 2026 Muhammed Zahid Demirel — Tüm hakları saklıdır.</p>
+            <div class="footer-social">
+                <a href="#" title="GitHub">🔗</a>
+                <a href="#" title="LinkedIn">💼</a>
+                <a href="#" title="E-posta">✉️</a>
+            </div>
+        </div>
     </footer>
 
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
