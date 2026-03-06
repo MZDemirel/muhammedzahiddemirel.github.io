@@ -3,135 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muhammed Zahid Demirel — Gömülü Sistemler ve Web Geliştirme ile ilgilenen bir mühendis adayının kişisel portfolyo sitesi.">
-    <title>Muhammed Zahid Demirel | Anasayfa</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Pastel Tasarım</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">MZD</a>
-            <div class="nav-links" id="navLinks">
-                <a href="index.html" class="active">Anasayfa</a>
-                <a href="about.html">Hakkımda</a>
-                <a href="interest.html">İlgi Alanlarım</a>
-                <a href="contact.html">İletişim</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Üst Kısım ve Navigasyon -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Ana Sayfa</a></li>
+                <li><a href="#">Hakkımızda</a></li>
+                <li><a href="#">Hizmetler</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+        </nav>
+        <h1>Web Dünyasına Hoş Geldiniz</h1>
+        <p>Bu proje, modern web tasarımının temel ögelerini saf HTML ve CSS kullanarak sergilemektedir.</p>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="particles"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="dot"></span>
-                <span>Portfolyoma Hoş Geldiniz</span>
-            </div>
-            <h1>
-                Merhaba, Ben<br>
-                <span class="gradient-text">Muhammed Zahid Demirel</span>
-            </h1>
-            <p class="hero-subtitle">
-                Gömülü Sistemler ve Web Geliştirme ile ilgilenen bir mühendis adayıyım. 
-                Teknolojiyle geleceğe köprü kuruyorum.
-            </p>
-            <div class="hero-actions">
-                <a href="about.html" class="btn btn-primary">
-                    🚀 Hakkımda
-                </a>
-                <a href="contact.html" class="btn btn-secondary">
-                    ✉️ İletişim
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- İçerik Alanı (İki Sütunlu Yapı) -->
+    <div class="content-wrapper">
+        
+        <!-- Sol Sütun: Ana İçerik -->
+        <main>
+            <h2>İçerik</h2>
+            <p>Burası sol taraftaki an içerik alanımız. Modern web standartlarına uygun olarak tasarlandı ve tamamen okunabilir bir deneyim sunmayı hedefledi.</p>
+            <p>Semantik etiketlerin gücü sayesinde sayfa yapımız arama motorları için oldukça verimli ve erişilebilir bir halde bulunuyor.</p>
+        </main>
 
-    <!-- Highlights Section -->
-    <section class="section" id="highlights">
-        <div class="section-header animate-on-scroll">
-            <span class="section-label">// Genel Bakış</span>
-            <h2 class="section-title">Neler Yapıyorum?</h2>
-            <p class="section-subtitle">
-                Yazılım ve donanımın kesişim noktasında projeler geliştiriyorum.
-            </p>
-        </div>
+        <!-- Sağ Sütun: Yan Menü -->
+        <aside>
+            <h2>Yan Menü / Bilgi</h2>
+            <p>Sağ tarafta bulunan bu yan içerik alanı, genellikle ekstra bağlantılar, duyurular veya kısa bilgiler sunmak için kullanılır.</p>
+            <p>Tasarımsal bütünlüğü korumak adına pastel renklerin uyumu sol içerik kutusuyla dengelendi.</p>
+        </aside>
 
-        <div class="skills-grid">
-            <div class="glass-card skill-card animate-on-scroll stagger-1">
-                <div class="skill-icon">⚡</div>
-                <h3>Gömülü Sistemler</h3>
-                <p>Mikrodenetleyiciler ve IoT cihazları ile donanım tabanlı projeler geliştiriyorum.</p>
-                <div class="skill-tags">
-                    <span class="skill-tag">ESP32</span>
-                    <span class="skill-tag">Arduino</span>
-                    <span class="skill-tag">C/C++</span>
-                </div>
-            </div>
-            <div class="glass-card skill-card animate-on-scroll stagger-2">
-                <div class="skill-icon">🌐</div>
-                <h3>Web Geliştirme</h3>
-                <p>Modern ve kullanıcı dostu web uygulamaları ve siteler tasarlıyorum.</p>
-                <div class="skill-tags">
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">React</span>
-                </div>
-            </div>
-            <div class="glass-card skill-card animate-on-scroll stagger-3">
-                <div class="skill-icon">🐍</div>
-                <h3>Yazılım Geliştirme</h3>
-                <p>Python ve diğer dillerde otomasyon, veri analizi ve uygulama geliştirme.</p>
-                <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">Linux</span>
-                </div>
-            </div>
-        </div>
+    </div>
 
-        <!-- Stats -->
-        <div class="stats-grid animate-on-scroll">
-            <div class="glass-card stat-card">
-                <div class="stat-number" data-count="10" data-suffix="+">0</div>
-                <div class="stat-label">Tamamlanan Proje</div>
-            </div>
-            <div class="glass-card stat-card">
-                <div class="stat-number" data-count="5" data-suffix="+">0</div>
-                <div class="stat-label">Kullanılan Teknoloji</div>
-            </div>
-            <div class="glass-card stat-card">
-                <div class="stat-number" data-count="3" data-suffix="+">0</div>
-                <div class="stat-label">Yıl Deneyim</div>
-            </div>
-            <div class="glass-card stat-card">
-                <div class="stat-number" data-count="100" data-suffix="%">0</div>
-                <div class="stat-label">Tutku & Motivasyon</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <span class="footer-logo">MZD</span>
-            <p class="footer-text">&copy; 2026 Muhammed Zahid Demirel — Tüm hakları saklıdır.</p>
-            <div class="footer-social">
-                <a href="#" title="GitHub">🔗</a>
-                <a href="#" title="LinkedIn">💼</a>
-                <a href="#" title="E-posta">✉️</a>
-            </div>
-        </div>
+    <!-- Alt Bilgi -->
+    <footer>
+        <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
     </footer>
 
-    <script src="scripts/scripts.js"></script>
 </body>
 </html>
