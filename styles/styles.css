@@ -124,3 +124,136 @@ footer p {
     font-size: 14px;
     font-weight: 500;
 }
+
+/* === Contact Form Container & Controls === */
+.contact-container {
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contact-container .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-container label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 14px;
+}
+
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container input[type="password"],
+.contact-container select,
+.contact-container textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    font-size: 15px;
+    color: #475569;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+    box-sizing: border-box;
+}
+
+.contact-container input:focus,
+.contact-container select:focus,
+.contact-container textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    background-color: #ffffff;
+}
+
+.contact-container textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-container .radio-group,
+.contact-container .checkbox-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.contact-container .radio-group label,
+.contact-container .checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.contact-container .radio-group input,
+.contact-container .checkbox-group input {
+    margin-right: 8px;
+    margin-bottom: 0;
+    cursor: pointer;
+    width: auto; /* override full width */
+}
+
+.contact-container input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    cursor: pointer;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.contact-container .file-hint {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.contact-container .btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    color: #ffffff;
+    text-align: center;
+}
+
+.contact-container .btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.contact-container .btn-submit {
+    background-color: #3b82f6; /* Mavi */
+}
+
+.contact-container .btn-reset {
+    background-color: #ef4444; /* Kırmızı */
+}
