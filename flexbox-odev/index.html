@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Düzeni Ödevi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ana Kapsayıcı: flex-direction: column, height: 100vh -->
+    <div class="wrapper">
+
+        <!-- 1. NAVBAR (10vh) -->
+        <header class="navbar">
+            <div class="logo">⬡ FlexLogo</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Ana Sayfa</a></li>
+                    <li><a href="#">Hakkında</a></li>
+                    <li><a href="#">Hizmetler</a></li>
+                    <li><a href="#">İletişim</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 2. HERO (30vh) -->
+        <section class="hero">
+            <!-- Sol Kolon: Metin + Buton -->
+            <div class="hero-text">
+                <h1>Modern Flexbox Düzeni</h1>
+                <p>Tek bir framework kullanmadan, saf CSS Flexbox ile güçlü yerleşimler oluşturulur.</p>
+                <button class="btn-hero">Keşfet</button>
+            </div>
+            <!-- Sağ Kolon: Görsel Placeholder -->
+            <div class="hero-image">
+                <span>Görsel Alan</span>
+            </div>
+        </section>
+
+        <!-- 3. KARTLAR BÖLÜMü (30vh) -->
+        <section class="cards-section">
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Kart 1</h3>
+                <p>Flexbox ile esnek düzen.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Kart 2</h3>
+                <p>Hızlı ve basit yerleşim.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📐</div>
+                <h3>Kart 3</h3>
+                <p>Ölçeklenebilir yapı.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌐</div>
+                <h3>Kart 4</h3>
+                <p>Responsive tasarım.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔧</div>
+                <h3>Kart 5</h3>
+                <p>Kolay özelleştirme.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Kart 6</h3>
+                <p>Performanslı yapı.</p>
+            </div>
+        </section>
+
+        <!-- 4. FLEX-GROW UYGULAMA ALANI (20vh) -->
+        <section class="grow-section">
+            <div class="grow-box box-1">
+                <span>Kutu 1</span>
+                <small>flex-grow: 1</small>
+            </div>
+            <div class="grow-box box-2">
+                <span>Kutu 2</span>
+                <small>flex-grow: 2</small>
+            </div>
+            <div class="grow-box box-3">
+                <span>Kutu 3</span>
+                <small>flex-grow: 1</small>
+            </div>
+        </section>
+
+        <!-- 5. FOOTER (10vh) -->
+        <footer class="footer">
+            <p>© 2026 Flexbox Ödevi — Tüm Hakları Saklıdır.</p>
+        </footer>
+
+    </div><!-- /wrapper -->
+
+</body>
+</html>

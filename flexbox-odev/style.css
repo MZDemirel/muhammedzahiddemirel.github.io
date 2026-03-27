@@ -1,0 +1,273 @@
+/* =========================================
+   GLOBAL SIFIRLAMA & TEMEL AYARLAR
+   ========================================= */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    overflow: hidden; /* Taşmayı engelle */
+}
+
+/* =========================================
+   ANA KAPSAYICI (WRAPPER)
+   - display: flex + flex-direction: column
+   - height: 100vh
+   ========================================= */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+/* =========================================
+   1. NAVBAR — 10vh
+   - justify-content: space-between
+   - align-items: center
+   ========================================= */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 0 2.5rem;
+    background-color: #1e293b;
+    border-bottom: 2px solid #334155;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 0.05em;
+}
+
+/* Navigasyon linkleri */
+nav .nav-links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+nav .nav-links li a:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+/* =========================================
+   2. HERO — 30vh
+   - flex-direction: row
+   - justify-content: space-between
+   - align-items: stretch  (her iki kolon tam yükseklik)
+   ========================================= */
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 30vh;
+    padding: 1.5rem 2.5rem;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    gap: 1.5rem;
+}
+
+/* Sol Kolon: Metin + Buton */
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.6rem;
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f1f5f9;
+}
+
+.hero-text p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+.btn-hero {
+    align-self: flex-start;
+    margin-top: 0.4rem;
+    padding: 0.5rem 1.4rem;
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-hero:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+/* Sağ Kolon: Görsel Placeholder */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: #334155;
+    border-radius: 12px;
+    border: 2px dashed #475569;
+    color: #64748b;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+/* =========================================
+   3. KARTLAR BÖLÜMü — 30vh
+   - display: flex + flex-wrap: wrap
+   - gap ile boşluk
+   ========================================= */
+.cards-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    height: 30vh;
+    padding: 0.75rem 2.5rem;
+    background-color: #1e293b;
+    border-top: 2px solid #334155;
+    border-bottom: 2px solid #334155;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    /* Her kart 6'lı grid gibi: (toplam - gap) / 6 */
+    flex: 1 1 calc(16.66% - 0.75rem);
+    min-width: 100px;
+    height: calc(30vh - 2.5rem);
+    max-height: 120px;
+    background-color: #0f172a;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    padding: 0.6rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    cursor: default;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #38bdf8;
+}
+
+.card-icon {
+    font-size: 1.4rem;
+}
+
+.card h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+.card p {
+    font-size: 0.7rem;
+    color: #64748b;
+    text-align: center;
+}
+
+/* =========================================
+   4. FLEX-GROW UYGULAMA ALANI — 20vh
+   - align-items: stretch  (kutular tam yüksekliğe esner)
+   - Kutu1: flex-grow:1 | Kutu2: flex-grow:2 | Kutu3: flex-grow:1
+   ========================================= */
+.grow-section {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 20vh;
+    gap: 0.5rem;
+    padding: 0.5rem 2.5rem;
+    background-color: #0f172a;
+}
+
+.grow-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f172a;
+    transition: opacity 0.2s ease;
+}
+
+.grow-box:hover { opacity: 0.85; }
+
+.grow-box small {
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.75;
+}
+
+/* flex-grow oranları: 1 – 2 – 1 */
+.box-1 {
+    flex-grow: 1;
+    background-color: #7dd3fc; /* Açık mavi */
+}
+
+.box-2 {
+    flex-grow: 2;
+    background-color: #38bdf8; /* Canlı mavi */
+}
+
+.box-3 {
+    flex-grow: 1;
+    background-color: #7dd3fc; /* Açık mavi */
+}
+
+/* =========================================
+   5. FOOTER — 10vh
+   - justify-content: center + align-items: center
+   ========================================= */
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: #1e293b;
+    border-top: 2px solid #334155;
+    color: #64748b;
+    font-size: 0.8rem;
+}
