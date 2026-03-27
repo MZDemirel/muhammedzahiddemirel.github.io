@@ -1,0 +1,8 @@
+# Kök dizindeki tüm dosya ve klasörleri yoksay
+/*
+
+# Sadece flexbox-odev klasörünü dahil et
+!/flexbox-odev/
+
+# (Opsiyonel) .gitignore dosyasının kendisini de takip etmek isterseniz:
+!.gitignore
