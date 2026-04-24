@@ -3,48 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pastel Tasarım</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="description" content="Web Programlama Dersi Laboratuvar Ana Sayfası - Hafta uygulamalarına erişim noktası">
+    <title>Laboratuvar Ana Sayfası | WP Lab</title>
+
+    <!-- Bootstrap 5.3 CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f8;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-card {
+            max-width: 720px;
+            width: 100%;
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.5rem 2.5rem 2rem;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .week-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 0.82rem;
+            line-height: 1.3;
+            transition: background 0.2s;
+        }
+
+        .week-item:hover {
+            background: #e9ecef;
+        }
+
+        .week-item .week-title {
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .week-item .week-desc {
+            color: #6c757d;
+            font-size: 0.78rem;
+        }
+
+        .week-item.active {
+            background: #e8f0fe;
+            border: 2px solid #0d6efd;
+        }
+
+        .week-item.active .week-title {
+            color: #0d6efd;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Üst Kısım ve Navigasyon -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Ana Sayfa</a></li>
-                <li><a href="#">Hakkımızda</a></li>
-                <li><a href="#">Hizmetler</a></li>
-                <li><a href="contact.html">İletişim</a></li>
-            </ul>
-        </nav>
-        <h1>Web Dünyasına Hoş Geldiniz</h1>
-        <p>Bu proje, modern web tasarımının temel ögelerini saf HTML ve CSS kullanarak sergilemektedir.</p>
-    </header>
+    <div class="main-card">
+        <!-- Üst Etiket -->
+        <div class="text-center mb-2">
+            <span class="badge text-bg-primary px-3 py-2 fs-6 fw-normal">Web Programlama Dersi</span>
+        </div>
 
-    <!-- İçerik Alanı (İki Sütunlu Yapı) -->
-    <div class="content-wrapper">
-        
-        <!-- Sol Sütun: Ana İçerik -->
-        <main>
-            <h2>İçerik</h2>
-            <p>Burası sol taraftaki an içerik alanımız. Modern web standartlarına uygun olarak tasarlandı ve tamamen okunabilir bir deneyim sunmayı hedefledi.</p>
-            <p>Semantik etiketlerin gücü sayesinde sayfa yapımız arama motorları için oldukça verimli ve erişilebilir bir halde bulunuyor.</p>
-        </main>
+        <!-- Başlık -->
+        <h1 class="text-center fw-bold mt-3 mb-2" style="font-size: 2rem;">Laboratuvar Ana Sayfası</h1>
+        <p class="text-center text-secondary mb-4" style="max-width: 480px; margin: 0 auto;">
+            Bu sayfa GitHub Pages üzerinde yayınlanan laboratuvar uygulamalarına giriş için
+            hazırlanmıştır. Aşağıdaki butondan hafta 7 uygulamasına geçebilirsiniz.
+        </p>
 
-        <!-- Sağ Sütun: Yan Menü -->
-        <aside>
-            <h2>Yan Menü / Bilgi</h2>
-            <p>Sağ tarafta bulunan bu yan içerik alanı, genellikle ekstra bağlantılar, duyurular veya kısa bilgiler sunmak için kullanılır.</p>
-            <p>Tasarımsal bütünlüğü korumak adına pastel renklerin uyumu sol içerik kutusuyla dengelendi.</p>
-        </aside>
+        <!-- CTA Butonları -->
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+            <!-- ✅ Hafta 7'ye Yönlendiren Buton -->
+            <a href="hafta7.html" class="btn btn-primary btn-lg px-4" id="btnHafta7">
+                <i class="bi bi-layers-half me-2"></i>Hafta 7 Uygulamasına Git
+            </a>
+            <button class="btn btn-outline-secondary btn-lg px-4" type="button" id="btnDigerHaftalar"
+                    data-bs-toggle="collapse" data-bs-target="#weeksCollapse">
+                <i class="bi bi-grid me-2"></i>Diğer Haftalar
+            </button>
+        </div>
 
+        <!-- Hafta Izgara Listesi -->
+        <div class="collapse show" id="weeksCollapse">
+            <div class="week-grid">
+                <div class="week-item">
+                    <div class="week-title">Hafta 1</div>
+                    <div class="week-desc">GitHub Pages</div>
+                </div>
+                <div class="week-item">
+                    <div class="week-title">Hafta 2</div>
+                    <div class="week-desc">HTML + CSS</div>
+                </div>
+                <div class="week-item">
+                    <div class="week-title">Hafta 3</div>
+                    <div class="week-desc">Form Yapıları</div>
+                </div>
+                <div class="week-item">
+                    <div class="week-title">Hafta 4</div>
+                    <div class="week-desc">Flexbox</div>
+                </div>
+                <div class="week-item">
+                    <div class="week-title">Hafta 5</div>
+                    <div class="week-desc">Position</div>
+                </div>
+                <div class="week-item">
+                    <div class="week-title">Hafta 6</div>
+                    <div class="week-desc">JavaScript</div>
+                </div>
+                <!-- Hafta 7 – Aktif / Yeni -->
+                <a href="hafta7.html" class="week-item active text-decoration-none">
+                    <div class="week-title">Hafta 7</div>
+                    <div class="week-desc">Bootstrap + JavaScript</div>
+                </a>
+            </div>
+        </div>
     </div>
 
-    <!-- Alt Bilgi -->
-    <footer>
-        <p>&copy; 2026 Tüm Hakları Saklıdır.</p>
-    </footer>
-
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmCGmM/fYlFXMc9S4J7GJl4f3qQ"
+            crossorigin="anonymous"></script>
 </body>
 </html>

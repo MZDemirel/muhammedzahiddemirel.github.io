@@ -1,0 +1,169 @@
+/*
+ * hafta7.css
+ * Hafta 7 – Bootstrap + JavaScript Laboratuvarı
+ * Özel stiller – Bootstrap class'larıyla çözülemeyen kısıtlı düzenlemeler
+ * -----------------------------------------------------------------------
+ */
+
+/* ── Genel Font Tanımı ── */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* ── Tema Geçiş Animasyonu ── */
+/* Tema değişimini pürüzsüz hale getirir */
+body,
+.card,
+.navbar,
+.footer,
+.hero-section,
+.info-section {
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+/* ── Navbar Özelleştirme ── */
+#mainNavbar {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Light tema navbar */
+[data-bs-theme="light"] #mainNavbar {
+    background-color: rgba(255, 255, 255, 0.92);
+}
+
+/* Dark tema navbar */
+[data-bs-theme="dark"] #mainNavbar {
+    background-color: rgba(33, 37, 41, 0.92);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Hero Section ── */
+.hero-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+[data-bs-theme="light"] .hero-section {
+    background: linear-gradient(135deg, #f8f9ff 0%, #eef2ff 100%);
+}
+
+[data-bs-theme="dark"] .hero-section {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+}
+
+/* Hero başlık vurgu rengi */
+.hero-highlight {
+    color: #0d6efd;
+}
+
+[data-bs-theme="dark"] .hero-highlight {
+    color: #6ea8fe;
+}
+
+/* ── Bilgi Kartı (Hero sağ panel) ── */
+.info-card {
+    border-radius: 16px;
+}
+
+/* ── Workshop Kartları ── */
+.workshop-card {
+    border-radius: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+}
+
+.workshop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+.workshop-number {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 800;
+    opacity: 0.7;
+}
+
+/* ── Info Section Arka Plan ── */
+[data-bs-theme="light"] .info-section {
+    background-color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .info-section {
+    background-color: #111318;
+}
+
+/* ── Reason Cards (Neden Katılmalısınız) ── */
+.reason-card {
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.reason-card:hover {
+    transform: scale(1.02);
+}
+
+/* ── Başvuru Özeti Kart Animasyonu ── */
+#resultArea .card {
+    animation: slideInUp 0.4s ease;
+    border-radius: 16px;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Form Kontrolleri ── */
+/* Boş alan hata rengi vurgusu */
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.15);
+}
+
+/* ── Footer ── */
+.footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="dark"] .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Özet Başlık Satırı ── */
+.summary-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="dark"] .summary-row {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.summary-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6c757d;
+    min-width: 130px;
+}
+
+.summary-value {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
