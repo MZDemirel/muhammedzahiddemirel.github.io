@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev 6 | JavaScript Uygulamaları</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f5f6fa;
+            color: #1a1a2e;
+            padding: 32px 20px 60px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            text-decoration: none;
+            color: #3b5bdb;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        /* ── Bölüm başlıkları ── */
+        .section-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #374151;
+            margin-bottom: 6px;
+        }
+
+        .section-desc {
+            font-size: 0.88rem;
+            color: #6b7280;
+            line-height: 1.65;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+
+        /* ── Kart ── */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 22px 24px;
+            margin-bottom: 40px;
+            max-width: 420px;
+        }
+
+        .card h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #111827;
+        }
+
+        /* ── Input ── */
+        .field { margin-bottom: 12px; }
+
+        .field label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 4px;
+        }
+
+        .field input,
+        .field select {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.93rem;
+            color: #374151;
+            background: #fff;
+            transition: border-color 0.2s;
+        }
+
+        .field input:focus,
+        .field select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+        }
+
+        /* ── Buton ── */
+        .btn-calc {
+            width: 100%;
+            padding: 10px;
+            background-color: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 6px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-calc:hover { background-color: #1d4ed8; }
+
+        /* ── Sonuç kutusu ── */
+        .result-box {
+            margin-top: 14px;
+            padding: 14px 16px;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            line-height: 1.8;
+            color: #14532d;
+            display: none;
+        }
+
+        .result-box.show { display: block; }
+
+        .result-box .result-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        /* Uygulama-2: iki kart yan yana */
+
+        /* Sonuç — büyük metin */
+        .result-big {
+            margin-top: 14px;
+            padding: 14px 16px;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #15803d;
+            display: none;
+        }
+
+        .result-big.show { display: block; }
+
+        hr.divider {
+            border: none;
+            border-top: 1px solid #e5e7eb;
+            margin: 8px 0 32px;
+        }
+    </style>
+</head>
+<body>
+
+    <a class="back-link" href="../index.html">&#8592; Ana Sayfaya Dön</a>
+
+    <!-- ════════════════════════════════════════
+         UYGULAMA 1 — Öğrenci Not Hesaplama
+    ════════════════════════════════════════ -->
+    <p class="section-label">Uygulama-1</p>
+    <p class="section-desc">
+        Kullanıcı web sayfasında form aracılığıyla Ad Soyad, Vize notu ve Final notunu girecek
+        (input type text), ortalama hesaplayıp (vize %40, final %60) harf notuna çevirecek ve
+        geçti / kaldı yazacak (durum >= 50 ise geçti). Bu uygulama için HTML+CSS+Javascript
+        kodlarını içeren uygulamayı gerçekleştirin.
+    </p>
+
+    <div class="card">
+        <h2>Öğrenci Not Hesaplama</h2>
+
+        <div class="field">
+            <input type="text" id="adSoyad" placeholder="Ad Soyad">
+        </div>
+        <div class="field">
+            <input type="text" id="vize" placeholder="Vize Notu (0-100)">
+        </div>
+        <div class="field">
+            <input type="text" id="final" placeholder="Final Notu (0-100)">
+        </div>
+
+        <button class="btn-calc" onclick="hesaplaGrade()">Hesapla</button>
+
+        <div class="result-box" id="gradeResult">
+            <div class="result-name" id="gradeAd"></div>
+            <div id="gradeDetails"></div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ════════════════════════════════════════
+         UYGULAMA 2 — Birim Dönüştürücü
+    ════════════════════════════════════════ -->
+    <p class="section-label">Uygulama-2</p>
+    <p class="section-desc">
+        Birim Dönüştürücü Uygulaması: Farklı mühendislik birimlerini (örneğin; Sıcaklık:
+        Celsius-Fahrenheit-Kelvin veya Uzunluk: Metre-Kilometre-Mil) birbirine dönüştüren
+        bir uygulama geliştirilecektir.
+    </p>
+
+    <div class="card">
+        <h2>Birim Dönüştürücü</h2>
+        <div class="field">
+            <label>Değer Giriniz:</label>
+            <input type="text" id="deger1" placeholder="Örn: 50">
+        </div>
+        <div class="field">
+            <label>Dönüşüm Tipi:</label>
+            <select id="tip1">
+                <option value="m-km">Metre → Kilometre</option>
+                <option value="c-f" selected>Celsius → Fahrenheit</option>
+                <option value="kg-g">Kilogram → Gram</option>
+            </select>
+        </div>
+        <button class="btn-calc" onclick="donustur(1)">Hesapla</button>
+        <div class="result-big" id="result1"></div>
+    </div>
+
+    <script>
+        /* ── Uygulama 1: Not hesaplama ── */
+        function hesaplaGrade() {
+            const ad     = document.getElementById('adSoyad').value.trim();
+            const vize   = parseFloat(document.getElementById('vize').value);
+            const final_ = parseFloat(document.getElementById('final').value);
+
+            if (!ad) { alert('Lütfen ad soyad giriniz.'); return; }
+            if (isNaN(vize) || isNaN(final_)) { alert('Lütfen geçerli notlar giriniz.'); return; }
+            if (vize < 0 || vize > 100 || final_ < 0 || final_ > 100) {
+                alert('Notlar 0-100 arasında olmalıdır.'); return;
+            }
+
+            const ort = vize * 0.4 + final_ * 0.6;
+            const harf = harfNotu(ort);
+            const durum = ort >= 50 ? 'Geçti' : 'Kaldı';
+
+            document.getElementById('gradeAd').textContent = ad;
+            document.getElementById('gradeDetails').innerHTML =
+                `Ortalama: ${ort.toFixed(2)}<br>Harf Notu: ${harf}<br>Durum: ${durum}`;
+
+            const box = document.getElementById('gradeResult');
+            box.classList.add('show');
+            box.style.backgroundColor = ort >= 50 ? '#f0fdf4' : '#fff1f2';
+            box.style.borderColor      = ort >= 50 ? '#bbf7d0' : '#fecdd3';
+            box.style.color            = ort >= 50 ? '#14532d' : '#9f1239';
+        }
+
+        function harfNotu(ort) {
+            if (ort >= 90) return 'AA';
+            if (ort >= 85) return 'BA';
+            if (ort >= 80) return 'BB';
+            if (ort >= 75) return 'CB';
+            if (ort >= 70) return 'CC';
+            if (ort >= 65) return 'DC';
+            if (ort >= 60) return 'DD';
+            if (ort >= 50) return 'FD';
+            return 'FF';
+        }
+
+        /* ── Uygulama 2: Birim dönüştürücü ── */
+        function donustur(n) {
+            const deger = parseFloat(document.getElementById('deger' + n).value);
+            const tip   = document.getElementById('tip' + n).value;
+            const box   = document.getElementById('result' + n);
+
+            if (isNaN(deger)) { alert('Lütfen geçerli bir değer giriniz.'); return; }
+
+            let sonuc, birim;
+
+            switch (tip) {
+                case 'm-km':
+                    sonuc = deger / 1000;
+                    birim = 'km';
+                    break;
+                case 'c-f':
+                    sonuc = deger * 9 / 5 + 32;
+                    birim = '°F';
+                    break;
+                case 'kg-g':
+                    sonuc = deger * 1000;
+                    birim = 'g';
+                    break;
+            }
+
+            box.textContent = `Sonuç: ${Number(sonuc.toFixed(3)).toLocaleString('tr-TR')} ${birim}`;
+            box.classList.add('show');
+        }
+    </script>
+
+</body>
+</html>

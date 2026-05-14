@@ -90,54 +90,77 @@
         <h1 class="text-center fw-bold mt-3 mb-2" style="font-size: 2rem;">Laboratuvar Ana Sayfası</h1>
         <p class="text-center text-secondary mb-4" style="max-width: 480px; margin: 0 auto;">
             Bu sayfa GitHub Pages üzerinde yayınlanan laboratuvar uygulamalarına giriş için
-            hazırlanmıştır. Aşağıdaki butondan hafta 7 uygulamasına geçebilirsiniz.
+            hazırlanmıştır. Aşağıdaki kartlardan ilgili ödeve veya hafta uygulamasına geçebilirsiniz.
         </p>
 
-        <!-- CTA Butonları -->
-        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
-            <!-- ✅ Hafta 7'ye Yönlendiren Buton -->
-            <a href="hafta7.html" class="btn btn-primary btn-lg px-4" id="btnHafta7">
-                <i class="bi bi-layers-half me-2"></i>Hafta 7 Uygulamasına Git
+        <!-- Ödevler Bölümü -->
+        <h5 class="fw-semibold mb-3" style="color:#1e3a8a;">
+            <i class="bi bi-journal-check me-2"></i>Ödevler
+        </h5>
+        <div class="week-grid mb-4">
+            <a href="odev-2/index.html" class="week-item text-decoration-none">
+                <div class="week-title">Ödev 2</div>
+                <div class="week-desc">HTML + CSS</div>
             </a>
-            <button class="btn btn-outline-secondary btn-lg px-4" type="button" id="btnDigerHaftalar"
-                    data-bs-toggle="collapse" data-bs-target="#weeksCollapse">
-                <i class="bi bi-grid me-2"></i>Diğer Haftalar
-            </button>
+            <a href="odev-3/index.html" class="week-item text-decoration-none">
+                <div class="week-title">Ödev 3</div>
+                <div class="week-desc">Form Yapıları</div>
+            </a>
+            <a href="odev-4/index.html" class="week-item text-decoration-none">
+                <div class="week-title">Ödev 4</div>
+                <div class="week-desc">Flexbox</div>
+            </a>
+            <a href="odev-5/index.html" class="week-item text-decoration-none">
+                <div class="week-title">Ödev 5</div>
+                <div class="week-desc">Position</div>
+            </a>
+            <a href="odev-6/index.html" class="week-item text-decoration-none">
+                <div class="week-title">Ödev 6</div>
+                <div class="week-desc">JavaScript</div>
+            </a>
+            <a href="odev-7/index.html" class="week-item text-decoration-none">
+                <div class="week-title">Ödev 7</div>
+                <div class="week-desc">Bootstrap</div>
+            </a>
+            <a href="odev-8/index.html" class="week-item text-decoration-none">
+                <div class="week-title">Ödev 8</div>
+                <div class="week-desc">React</div>
+            </a>
         </div>
 
-        <!-- Hafta Izgara Listesi -->
-        <div class="collapse show" id="weeksCollapse">
-            <div class="week-grid">
-                <div class="week-item">
-                    <div class="week-title">Hafta 1</div>
-                    <div class="week-desc">GitHub Pages</div>
-                </div>
-                <div class="week-item">
-                    <div class="week-title">Hafta 2</div>
-                    <div class="week-desc">HTML + CSS</div>
-                </div>
-                <div class="week-item">
-                    <div class="week-title">Hafta 3</div>
-                    <div class="week-desc">Form Yapıları</div>
-                </div>
-                <div class="week-item">
-                    <div class="week-title">Hafta 4</div>
-                    <div class="week-desc">Flexbox</div>
-                </div>
-                <div class="week-item">
-                    <div class="week-title">Hafta 5</div>
-                    <div class="week-desc">Position</div>
-                </div>
-                <div class="week-item">
-                    <div class="week-title">Hafta 6</div>
-                    <div class="week-desc">JavaScript</div>
-                </div>
-                <!-- Hafta 7 – Aktif / Yeni -->
-                <a href="hafta7.html" class="week-item active text-decoration-none">
-                    <div class="week-title">Hafta 7</div>
-                    <div class="week-desc">Bootstrap + JavaScript</div>
-                </a>
+        <!-- Haftalar Bölümü -->
+        <h5 class="fw-semibold mb-3" style="color:#1e3a8a;">
+            <i class="bi bi-calendar-week me-2"></i>Hafta Uygulamaları
+        </h5>
+        <div class="week-grid">
+            <div class="week-item">
+                <div class="week-title">Hafta 1</div>
+                <div class="week-desc">GitHub Pages</div>
             </div>
+            <div class="week-item">
+                <div class="week-title">Hafta 2</div>
+                <div class="week-desc">HTML + CSS</div>
+            </div>
+            <div class="week-item">
+                <div class="week-title">Hafta 3</div>
+                <div class="week-desc">Form Yapıları</div>
+            </div>
+            <div class="week-item">
+                <div class="week-title">Hafta 4</div>
+                <div class="week-desc">Flexbox</div>
+            </div>
+            <div class="week-item">
+                <div class="week-title">Hafta 5</div>
+                <div class="week-desc">Position</div>
+            </div>
+            <div class="week-item">
+                <div class="week-title">Hafta 6</div>
+                <div class="week-desc">JavaScript</div>
+            </div>
+            <a href="hafta7.html" class="week-item active text-decoration-none">
+                <div class="week-title">Hafta 7</div>
+                <div class="week-desc">Bootstrap + JavaScript</div>
+            </a>
         </div>
     </div>
 

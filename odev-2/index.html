@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Temel Ödevi</title>
+    <style>
+        /* === Genel Sıfırlama === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+        }
+
+        /* === GRUP SEÇİCİ: h1, h2 ve p için ortak kurallar === */
+        h1, h2, p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        /* ===================== HEADER ===================== */
+        header {
+            background-color: #f1f5f9;
+            border-bottom: 2px solid #e2e8f0;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 0;
+        }
+
+        /* === HİYERARŞİK SEÇİCİ 1: header nav ul === */
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* === HİYERARŞİK SEÇİCİ 2: header nav ul li a === */
+        header nav ul li {
+            display: inline-block;
+            margin-left: 6px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #334155;
+            font-size: 0.92rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        /* Hover efekti */
+        header nav ul li a:hover {
+            background-color: #1e3a8a;
+            color: #ffffff;
+        }
+
+        /* Aktif link */
+        header nav ul li a.active {
+            background-color: #3b82f6;
+            color: #ffffff;
+        }
+
+        /* ===================== AÇIKLAMA BANDI ===================== */
+        .intro-band {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 18px 40px;
+        }
+
+        /* === HİYERARŞİK SEÇİCİ 3: .intro-band p span (vurgular) === */
+        .intro-band p {
+            font-size: 0.93rem;
+            color: #475569;
+            line-height: 1.7;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        .intro-band p span {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* ===================== İKİ SÜTUNLU İÇERİK ===================== */
+        .content-wrapper {
+            display: flex;
+            gap: 24px;
+            width: 90%;
+            max-width: 900px;
+            margin: 32px auto;
+        }
+
+        /* Sol sütun – İçerik */
+        .content-main {
+            flex: 2;
+            background-color: #fef9c3;
+            border: 2px solid #fde047;
+            border-radius: 10px;
+            padding: 24px;
+        }
+
+        /* Sağ sütun – Yan Menü / Bilgi */
+        .content-aside {
+            flex: 1;
+            background-color: #e0f2fe;
+            border: 2px solid #bae6fd;
+            border-radius: 10px;
+            padding: 24px;
+        }
+
+        /* === HİYERARŞİK SEÇİCİ 4: .content-main h2, .content-aside h2 === */
+        .content-main h2,
+        .content-aside h2 {
+            font-size: 1.1rem;
+            color: #0f172a;
+            border-bottom: 2px dashed rgba(0, 0, 0, 0.1);
+            padding-bottom: 8px;
+            margin-bottom: 14px;
+        }
+
+        /* === HİYERARŞİK SEÇİCİ 5: .content-main p ve .content-aside p === */
+        .content-main p {
+            font-size: 0.92rem;
+            color: #374151;
+            text-align: left;
+            line-height: 1.75;
+        }
+
+        .content-main p strong {
+            color: #1e293b;
+        }
+
+        .content-aside p {
+            font-size: 0.9rem;
+            color: #374151;
+            text-align: left;
+            line-height: 1.75;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background-color: #e2e8f0;
+            border-top: 2px solid #cbd5e1;
+            padding: 16px 40px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: #475569;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER + NAVİGASYON -->
+    <header>
+        <h1>CSS Temel Ödevi</h1>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Ana Sayfa</a></li>
+                <li><a href="#">Hakkında</a></li>
+                <li><a href="#">Hizmetler</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- AÇIKLAMA BANDI -->
+    <div class="intro-band">
+        <p>
+            Verilen benzer bir düzende basit bir web sayfası oluşturun. CSS'in temel özelliklerini
+            (<span>display, width, height, margin, padding, border, selector</span>) uygulayın.
+            Sadece HTML5 + CSS3 kullanın, hazır framework kullanmak yasak (Bootstrap, Tailwind vb.).
+        </p>
+    </div>
+
+    <!-- İKİ SÜTUNLU İÇERİK -->
+    <div class="content-wrapper">
+
+        <!-- Sol: İçerik -->
+        <div class="content-main">
+            <h2>İçerik</h2>
+            <p>
+                Bu alanda örnek içerik metinleri bulunmaktadır. CSS özellikleriyle bu metinler
+                arasında <strong>boşluklar</strong> (line-height) ve hizalamalar (text-align)
+                düzenlenmiştir.
+            </p>
+            <p>
+                Önce CSS ile kutuları / alanları yan yana getirmeyi, ardından alt alta
+                yerleştirmeyi öğrendik. Şimdi ise CSS seçicilerini kullanarak
+                <strong>grup</strong> ve hiyerarşi seçimler yapmayı göreceğiz.
+            </p>
+        </div>
+
+        <!-- Sağ: Yan Menü / Bilgi -->
+        <div class="content-aside">
+            <h2>Yan Menü / Bilgi</h2>
+            <p>
+                Bu alan yan menü veya bilgi kısmıdır. CSS ile genişlik (width), yükseklik (height),
+                kenar boşlukları (margin/padding) ve kenarlık (border) özellikleri kullanılarak
+                düzenlenebilir.
+            </p>
+            <p>
+                Öğrendiklerimizi hiyerarşik ve grup seçicilerle uygulayıp farklı bölümlere
+                stil verebildik.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS alıştırmasıdır.</p>
+    </footer>
+
+</body>
+</html>

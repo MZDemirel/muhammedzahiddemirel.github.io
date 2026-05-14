@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev 4 | Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ana kapsayıcı: 100vh, flex-direction: column -->
+    <div class="wrapper">
+
+        <!-- 1) NAVBAR — 10vh -->
+        <nav class="navbar">
+            <div class="navbar-logo">FlexLab</div>
+            <ul class="navbar-links">
+                <li><a href="#">Ana Sayfa</a></li>
+                <li><a href="#">Hakkında</a></li>
+                <li><a href="#">Projeler</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+        </nav>
+
+        <!-- 2) HERO — 30vh (iki kolon: metin + görsel) -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Flexbox ile Düzen</h1>
+                <p>justify-content, align-items ve flex-direction kullanımı.</p>
+                <a href="#cards" class="btn-hero">Keşfet</a>
+            </div>
+            <div class="hero-image">
+                <span>Görsel Alanı</span>
+            </div>
+        </section>
+
+        <!-- 3) KARTLAR — 30vh -->
+        <section class="cards" id="cards">
+            <div class="card">Kart 1</div>
+            <div class="card">Kart 2</div>
+            <div class="card">Kart 3</div>
+            <div class="card">Kart 4</div>
+            <div class="card">Kart 5</div>
+            <div class="card">Kart 6</div>
+        </section>
+
+        <!-- 4) FLEX GROW — 20vh -->
+        <section class="grow-section">
+            <div class="grow-box box1">Kutu 1<br><small>grow: 1</small></div>
+            <div class="grow-box box2">Kutu 2<br><small>grow: 2</small></div>
+            <div class="grow-box box3">Kutu 3<br><small>grow: 1</small></div>
+        </section>
+
+        <!-- 5) FOOTER — 10vh -->
+        <footer class="footer">
+            <p>&copy; 2026 Flexbox Ödevi &mdash; Muhammed Zahid Demirel</p>
+            <a href="../index.html" class="footer-link">&#8592; Ana Sayfaya Dön</a>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+/* =============================================
+   GENEL SIFIRLAMA
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f0f2f8;
+}
+
+/* =============================================
+   ANA KAPSAYICI — 100vh, flex column
+   ============================================= */
+.wrapper {
+    display: flex;
+    flex-direction: column;    /* dikey yerleşim */
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* =============================================
+   1) NAVBAR — 10vh
+   ============================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;  /* logo sol, linkler sağ */
+    align-items: center;             /* dikey ortala */
+    height: 10vh;
+    background-color: #1e3a8a;
+    padding: 0 32px;
+    flex-shrink: 0;
+}
+
+.navbar-logo {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #bfdbfe;
+    font-size: 0.9rem;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar-links a:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+/* =============================================
+   2) HERO — 30vh (iki kolon)
+   ============================================= */
+.hero {
+    display: flex;
+    flex-direction: row;          /* yan yana iki kolon */
+    justify-content: space-between;
+    align-items: stretch;         /* görsel kutusu yüksekliği esnesin */
+    height: 30vh;
+    background-color: #dbeafe;
+    padding: 0 32px;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;      /* içeriği dikey diz */
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 1.5rem;
+    color: #1e3a8a;
+}
+
+.hero-text p {
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.btn-hero {
+    display: inline-block;
+    width: fit-content;
+    padding: 8px 22px;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-hero:hover {
+    background-color: #3b82f6;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #93c5fd;
+    border-radius: 10px;
+    margin: 12px 0;
+    color: #1e3a8a;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* =============================================
+   3) KARTLAR — 30vh
+   ============================================= */
+.cards {
+    display: flex;
+    flex-wrap: wrap;             /* taşarsa alt satıra geç */
+    gap: 12px;
+    height: 30vh;
+    padding: 16px 32px;
+    background-color: #f8fafc;
+    align-items: flex-start;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.card {
+    flex: 1 1 calc(16.66% - 12px);   /* 6 kart tek satırda */
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #334155;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    height: calc(30vh - 44px);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* =============================================
+   4) FLEX GROW — 20vh
+   ============================================= */
+.grow-section {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;        /* kutular yükseklikte esnesin */
+    height: 20vh;
+    gap: 12px;
+    padding: 12px 32px;
+    background-color: #f1f5f9;
+    flex-shrink: 0;
+}
+
+.grow-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.grow-box small {
+    font-weight: 400;
+    font-size: 0.78rem;
+    opacity: 0.85;
+}
+
+.box1 {
+    flex-grow: 1;               /* oran: 1 */
+    background-color: #3b82f6;
+}
+
+.box2 {
+    flex-grow: 2;               /* oran: 2 — iki kat geniş */
+    background-color: #1e3a8a;
+}
+
+.box3 {
+    flex-grow: 1;               /* oran: 1 */
+    background-color: #3b82f6;
+}
+
+/* =============================================
+   5) FOOTER — 10vh
+   ============================================= */
+.footer {
+    display: flex;
+    justify-content: center;    /* yatay ortala */
+    align-items: center;        /* dikey ortala */
+    gap: 24px;
+    height: 10vh;
+    background-color: #1e3a8a;
+    flex-shrink: 0;
+}
+
+.footer p {
+    color: #bfdbfe;
+    font-size: 0.85rem;
+}
+
+.footer-link {
+    color: #93c5fd;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}

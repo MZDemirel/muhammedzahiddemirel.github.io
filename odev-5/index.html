@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev 5 | CSS Position — Duyuru Kartı</title>
+    <style>
+        /* ===== GENEL SIFIRLAMA ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #eef0f7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px 80px;
+        }
+
+        /* ===== FIXED 1: Sol üst — Ana Sayfaya Dön butonu ===== */
+        .btn-back {
+            position: fixed;           /* position: fixed */
+            top: 16px;
+            left: 16px;
+            background-color: #3b5bdb;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            z-index: 100;
+            cursor: pointer;           /* hover cursor */
+            transition: background-color 0.25s ease, transform 0.2s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #2f4ac9;
+            transform: translateY(-2px);
+        }
+
+        /* ===== FIXED 2: Sağ alt — Yardımcı Menü butonu ===== */
+        .btn-help {
+            position: fixed;           /* position: fixed */
+            bottom: 24px;
+            right: 24px;
+            background-color: #7950f2;
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 100;
+            transition: background-color 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 4px 16px rgba(121, 80, 242, 0.35);
+        }
+
+        .btn-help:hover {
+            background-color: #6741d9;
+            box-shadow: 0 6px 24px rgba(121, 80, 242, 0.5);
+        }
+
+        /* ===== KART ALANI (relative kapsayıcı) ===== */
+        .card-wrapper {
+            position: relative;        /* position: relative — absolute'ların referansı */
+            width: 540px;
+            max-width: 100%;
+            min-height: 420px;
+            background: linear-gradient(135deg, #c5cef5 0%, #b8b0f0 50%, #c9c0f5 100%);
+            border-radius: 28px;
+            padding: 48px 40px 40px;
+            box-shadow: 0 12px 48px rgba(90, 80, 180, 0.2);
+            overflow: hidden;
+            cursor: default;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .card-wrapper:hover {
+            box-shadow: 0 18px 60px rgba(90, 80, 180, 0.3);
+            transform: translateY(-4px);
+        }
+
+        /* ===== ABSOLUTE 1: Dekoratif arka plan dairesi ===== */
+        .deco-circle {
+            position: absolute;        /* position: absolute */
+            bottom: -40px;
+            right: -40px;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            z-index: 0;                /* z-index — arkada kalır */
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1);   opacity: 0.25; }
+            50%       { transform: scale(1.08); opacity: 0.38; }
+        }
+
+        /* ===== ABSOLUTE 2: Sol üst — "Ücretsiz" rozeti ===== */
+        .badge-free {
+            position: absolute;        /* position: absolute */
+            top: 20px;
+            left: 24px;
+            background-color: #fef9c3;
+            color: #854d0e;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
+            z-index: 2;
+            cursor: help;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .badge-free:hover {
+            transform: scale(1.08);
+            background-color: #fef08a;
+        }
+
+        /* ===== ABSOLUTE 3: Sağ üst — "24 Nisan" tarih rozeti ===== */
+        .badge-date {
+            position: absolute;        /* position: absolute */
+            top: 20px;
+            right: 24px;
+            background-color: #d1fae5;
+            color: #065f46;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 20px;
+            z-index: 2;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .badge-date:hover {
+            transform: scale(1.08);
+            background-color: #a7f3d0;
+        }
+
+        /* ===== ABSOLUTE 4: Sağ alt — "Son Kayıt" uyarısı ===== */
+        .badge-deadline {
+            position: absolute;        /* position: absolute */
+            bottom: 24px;
+            right: 24px;
+            background-color: #fde8e8;
+            color: #9b1c1c;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 20px;
+            z-index: 2;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0.55; }
+        }
+
+        .badge-deadline:hover {
+            transform: scale(1.08);
+            background-color: #fca5a5;
+            animation: none;
+        }
+
+        /* ===== ABSOLUTE 5: Orta — "Konum" bilgi kutusu ===== */
+        .badge-location {
+            position: absolute;        /* position: absolute */
+            bottom: 70px;
+            right: 40px;
+            background-color: #ffffffd9;
+            color: #374151;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 10px;
+            z-index: 3;                /* z-index — rozet üstünde */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: default;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .badge-location:hover {
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+            transform: translateY(-2px);
+        }
+
+        /* ===== KART İÇERİĞİ ===== */
+        .card-content {
+            position: relative;        /* deco-circle'ın üstünde kalması için */
+            z-index: 1;
+        }
+
+        .card-content h1 {
+            font-size: 1.55rem;
+            color: #1e1b4b;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .card-content p {
+            font-size: 0.92rem;
+            color: #374151;
+            line-height: 1.8;
+            max-width: 340px;
+        }
+
+        /* ===== FOOTER ===== */
+        .page-footer {
+            margin-top: 28px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FIXED: Sol üst geri butonu -->
+    <a class="btn-back" href="../index.html">&#8592; Ana Sayfaya Dön</a>
+
+    <!-- FIXED: Sağ alt yardımcı menü -->
+    <div class="btn-help">Yardımcı Menü</div>
+
+    <!-- position: relative kapsayıcı -->
+    <div class="card-wrapper">
+
+        <!-- ABSOLUTE 1: Arka plan dekoratif daire (z-index: 0) -->
+        <div class="deco-circle"></div>
+
+        <!-- ABSOLUTE 2: Sol üst rozet -->
+        <span class="badge-free">Ücretsiz</span>
+
+        <!-- ABSOLUTE 3: Sağ üst tarih rozeti -->
+        <span class="badge-date">24 Nisan</span>
+
+        <!-- ABSOLUTE 4: Sağ alt son kayıt uyarısı -->
+        <span class="badge-deadline">Son Kayıt</span>
+
+        <!-- ABSOLUTE 5: Konum kutusu (z-index: 3) -->
+        <div class="badge-location">Konum: Konferans Salonu</div>
+
+        <!-- Kart asıl içeriği (z-index: 1 — daire'nin üstünde) -->
+        <div class="card-content">
+            <h1>Teknoloji Topluluğu Etkinliği</h1>
+            <p>
+                Bu örnek sayfada amaç; CSS position özelliklerini
+                kullanarak tek bir duyuru kartı üzerinde relative, absolute,
+                fixed, z-index, hover, cursor ve animasyon mantığını
+                birlikte göstermektir.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <p class="page-footer">2026 &mdash; LAB Position Örnek Çalışması</p>
+
+</body>
+</html>

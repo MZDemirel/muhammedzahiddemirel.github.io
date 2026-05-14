@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev 3 | Detaylı İletişim Formu</title>
+    <style>
+        /* === Genel Sıfırlama === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f0f2f5;
+            min-height: 100vh;
+            padding: 48px 16px;
+        }
+
+        /* === Ana geri dön linki === */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #475569;
+            font-size: 0.88rem;
+        }
+
+        .back-link:hover {
+            color: #1e3a8a;
+        }
+
+        /* =========================================================
+           CONTACT CONTAINER  (ödev gereksinimi: .contact-container)
+           ========================================================= */
+        .contact-container {
+            width: 600px;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 36px 40px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Başlık */
+        .contact-container h1 {
+            text-align: center;
+            font-size: 1.55rem;
+            color: #0f172a;
+            margin-bottom: 28px;
+        }
+
+        /* Her alan grubu */
+        .contact-container .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Etiketler */
+        .contact-container label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #334155;
+            margin-bottom: 7px;
+        }
+
+        /* =========================================================
+           ÇOKLU SEÇİCİ: input, select, textarea için ortak kurallar
+           ========================================================= */
+        .contact-container input[type="text"],
+        .contact-container input[type="email"],
+        .contact-container input[type="password"],
+        .contact-container select,
+        .contact-container textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.93rem;
+            color: #475569;
+            background-color: #f8fafc;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+            margin-bottom: 0;
+        }
+
+        /* Focus efekti */
+        .contact-container input[type="text"]:focus,
+        .contact-container input[type="email"]:focus,
+        .contact-container input[type="password"]:focus,
+        .contact-container select:focus,
+        .contact-container textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+            background-color: #ffffff;
+        }
+
+        /* Textarea yüksekliği */
+        .contact-container textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Required yıldız — red dot (görseldeki küçük kırmızı nokta) */
+        .contact-container input[required],
+        .contact-container select[required],
+        .contact-container textarea[required] {
+            border-left: 3px solid #ef4444;
+        }
+
+        /* =========================================================
+           RADIO & CHECKBOX GRUPLARI
+           ========================================================= */
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px 16px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: normal;
+            font-size: 0.92rem;
+            color: #374151;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+
+        /* Radio / checkbox boyutunu sıfırla — width:100% override */
+        .contact-container .radio-group input[type="radio"],
+        .contact-container .checkbox-group input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            cursor: pointer;
+            accent-color: #3b82f6;
+            flex-shrink: 0;
+        }
+
+        /* =========================================================
+           DOSYA GİRİŞİ
+           ========================================================= */
+        .contact-container input[type="file"] {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px dashed #cbd5e1;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            cursor: pointer;
+            font-size: 0.88rem;
+            color: #64748b;
+        }
+
+        .file-hint {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* =========================================================
+           BUTONLAR
+           ========================================================= */
+        .form-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .contact-container .btn {
+            flex: 1;
+            padding: 13px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: #ffffff;
+            transition: opacity 0.2s ease, transform 0.15s ease;
+        }
+
+        .contact-container .btn:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+
+        .contact-container .btn-submit {
+            background-color: #3b82f6;
+        }
+
+        .contact-container .btn-reset {
+            background-color: #ef4444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+
+        <!-- Geri dön -->
+        <a class="back-link" href="../index.html">&#8592; Ana Sayfaya Dön</a>
+
+        <h1>Detaylı İletişim Formu</h1>
+
+        <form action="#" method="post" novalidate>
+
+            <!-- Ad Soyad -->
+            <div class="form-group">
+                <label for="adSoyad">Ad Soyad:</label>
+                <input type="text" id="adSoyad" name="adSoyad"
+                       placeholder="Örn: Muhammed Zahid Demirel" required>
+            </div>
+
+            <!-- E-posta -->
+            <div class="form-group">
+                <label for="eposta">E-posta Adresi:</label>
+                <input type="email" id="eposta" name="eposta"
+                       placeholder="ornek@mail.com" required>
+            </div>
+
+            <!-- Şifre -->
+            <div class="form-group">
+                <label for="sifre">Başvuru Takip Şifresi:</label>
+                <input type="password" id="sifre" name="sifre"
+                       placeholder="Şifrenizi girin">
+            </div>
+
+            <!-- İletişim Tercihi (radio) -->
+            <div class="form-group">
+                <label>İletişim Tercihi:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="iletisimTercihi" value="eposta" checked>
+                        Bana e-posta ile ulaşın
+                    </label>
+                    <label>
+                        <input type="radio" name="iletisimTercihi" value="telefon">
+                        Bana telefonla ulaşın
+                    </label>
+                </div>
+            </div>
+
+            <!-- İlgi Alanları (checkbox) -->
+            <div class="form-group">
+                <label>İlgi Alanları / Yetenekler:</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="ilgi" value="html">
+                        HTML
+                    </label>
+                    <label>
+                        <input type="checkbox" name="ilgi" value="css">
+                        CSS
+                    </label>
+                    <label>
+                        <input type="checkbox" name="ilgi" value="algoritma">
+                        Algoritma
+                    </label>
+                </div>
+            </div>
+
+            <!-- Konu (select) -->
+            <div class="form-group">
+                <label for="konu">Konu:</label>
+                <select id="konu" name="konu" required>
+                    <option value="" disabled selected>Lütfen bir konu seçin...</option>
+                    <option value="is-teklifi">İş Teklifi</option>
+                    <option value="soru">Soru</option>
+                    <option value="geri-bildirim">Geri Bildirim</option>
+                    <option value="diger">Diğer</option>
+                </select>
+            </div>
+
+            <!-- Dosya Yükleme -->
+            <div class="form-group">
+                <label for="dosya">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
+                <input type="file" id="dosya" name="dosya" accept=".pdf,.doc,.docx,.jpg,.png">
+                <span class="file-hint">PDF, DOC veya resim dosyası (maks. 5 MB)</span>
+            </div>
+
+            <!-- Mesaj -->
+            <div class="form-group">
+                <label for="mesaj">Mesajınız:</label>
+                <textarea id="mesaj" name="mesaj"
+                          placeholder="Detaylı mesajınızı buraya yazabilirsiniz..." required></textarea>
+            </div>
+
+            <!-- Butonlar -->
+            <div class="form-buttons">
+                <button type="submit" class="btn btn-submit">Gönder</button>
+                <button type="reset"  class="btn btn-reset">Temizle</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
